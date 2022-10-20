@@ -32,7 +32,7 @@ public class Injector {
     }
 
     public Object getInstance(Class<?> certainInterface) {
-        Class<?> clazz = findClassExtendingInterface(certainInterface);
+        Class<?> clazz = findClassExtendingInterface(certainInterface); //ToDo use correct variable names
         return createInstance(clazz);
     }
 
