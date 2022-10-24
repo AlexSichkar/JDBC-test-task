@@ -15,7 +15,7 @@ public class Manufacturer {
 
     public Manufacturer(Long id, String name, String country) {
         this.id = id;
-        this.name = name;
+        this.name = name;   //ToDo use constructor for name and country
         this.country = country;
     }
 
