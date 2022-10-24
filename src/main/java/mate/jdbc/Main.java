@@ -5,6 +5,7 @@ import mate.jdbc.dao.ManufacturerDaoImpl;
 import mate.jdbc.model.Manufacturer;
 
 public class Main {
+private static final int MANUFACTURERS_COUNT = 4;
 
     public static void main(String[] args) {
         ManufacturerDao manufacturerDao = new ManufacturerDaoImpl();

@@ -3,7 +3,6 @@ package mate.jdbc.util;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Properties;
 
 public class ConnectionUtil {
     static {
@@ -15,12 +14,12 @@ public class ConnectionUtil {
     }
 
     public static Connection getConnection() {
-        try {   //ToDo use "try with resources" for closing connection automatically
-            Properties dbProperties = new Properties();
-            dbProperties.put("user", "root");
-            dbProperties.put("password", "1234567");
-            return DriverManager.getConnection("jdbc:mysql://localhost:3306/taxi_db", dbProperties);    //ToDo url path in separate variable
-        } catch (SQLException e) {
+        String url = "jdbc:mysql://localhost:3306/taxi_db";
+        String userName = "root";
+        String password = "1234567";
+    try (Connection connection = DriverManager.getConnection(url, userName, password)) {
+      return connection;
+         } catch (SQLException e) {
             throw new RuntimeException("Can't create connection to db", e);
         }
     }

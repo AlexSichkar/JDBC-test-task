@@ -1,19 +1,20 @@
 package mate.jdbc.dao;
 
-import java.util.List;
-
 import mate.jdbc.lib.Dao;
 import mate.jdbc.model.Manufacturer;
+
+import java.util.List;
+import java.util.Optional;
 
 @Dao
 public interface ManufacturerDao {
     Manufacturer create(Manufacturer manufacturer);
 
-    Manufacturer get(Long id);
+    Optional<Manufacturer> get(Long id);
 
-    List<Manufacturer> getAll() throws RuntimeException;
+    List<Manufacturer> getAll();
 
     Manufacturer update(Manufacturer manufacturer);
 
-    void delete(Long id);
+    boolean delete(Long id);
 }
